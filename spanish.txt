@@ -1,0 +1,92 @@
+MyTinycalc es una calculadora parecida a la HP41
+puesto que tiene comandos tales como:
+
+LBL nn
+GTO nn
+XEQ nn
+RTN
+PROMPT
+STOP
+X=Y? X#Y?
+X>Y? X<Y?
+X>=Y? X<=Y?
+X=0? X#0?
+X>0? X<0?
+X>=0? X<=0?
+
+pero tambien maneja listas de hasta 254 caracteres
+con comandos de la HP48:
+
+HEAD
+TAIL
+GET
+PUT
+SIZE
++
+EVAL  (Retorna el ultimo elemento de la lista)
+LISTCH : Numero de caracteres de la lista ( No en la 48)
+
+Tiene variables con comandos para guardarlas y traerlas
+y evaluarlas tales como
+
+STO
+RCL
+EVAL
+
+Las variables pueden guardar numeros , listas, caracteres o programas.
+
+Existe un programa principal como en la 41. Nota: En la 48 no existe.
+Hay una memoria principal con registros numerados.
+
+Para guardar o traer de una memoria el numero de registro
+precede a STO o RCL
+
+Ejemplo: 4 RCL trae la memoria 4
+10  5  STO guarda 10 en la memoria 5.
+
+Indirecto. (IND) Puede usarse con STO y RCL
+
+Ej.
+6 IND RCL 
+10  5  IND STO
+
+Tiene estructuras de programacion similares a las de la 48.
+y Condicionales de la 48.
+
+El stack es ilimitado como en la 48.
+Hay muchos comandos para manejar el stack similares a los de 
+la HP48.
+
+Las variables de programa pueden invocar otras variables de
+programa hasta 8 niveles de profundidad.
+
+El programa principal puede invocar variables de programa 
+hasta 9 niveles.
+
+El numero de niveles posibles con XEQ nn y RTN es de 99
+
+Los programas deben digitarse manualmente en la cuadricula
+de programa.
+
+Se pueden guardar programas a formato texto y luego traerlos.
+
+El ancho de cada nivel del stack es de 254 caracteres max.
+
+El ancho max de programa es 79 caracteres.
+
+Se pueden crear variables con caracteres especiales para ser
+usadas en el programa principal.
+
+
+Se pueden asignar hasta 18 teclas.
+
+Es posible exportar e importar las variables y las teclas asignadas
+
+Para cambiar el numero de decimales se usa FIX
+
+Ejemplo:
+
+4 FIX   coloca el numero de decimales en 4.
+
+
+

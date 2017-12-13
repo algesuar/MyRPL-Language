@@ -1,0 +1,259 @@
+<HTML>
+<HEAD>
+MyRPL 1.0
+</HEAD>
+<BODY>
+<PRE>
+
+MyTinycalc is a calculator with a built in language (MyRPL).
+
+The language has both: a subset of the HP48 programming language and
+a subset of the HP41 programming language.
+
+My tinycalc will be only one of the future calculators capable of running MyRPL
+
+The calculator has an dynamic n level stack and has HP41 commands as:
+
+LBL nn
+GTO nn
+XEQ nn
+RTN
+PROMPT
+STOP
+X=Y? X#Y?
+X>Y? X<Y?
+X>=Y? X<=Y?
+X=0? X#0?
+X>0? X<0?
+X>=0? X<=0?
+
+also, mytiny calc has lists up to 254 characters
+with commands present in the HP48:
+
+HEAD
+TAIL
+GET
+PUT
+SIZE ( number of elements )
++
+EVAL  (Returns the last element of a list)
+LISTCH : Number of characters in the list ( No present in the 48)
+
+Tiny calc has variables with commands for saving ,
+loading and evaluating them:
+
+STO
+RCL
+EVAL
+
+The variables can save numbers , lists, characters o programs.
+
+There is a main program as in the 41. (Note: In the 48 does not exist.)
+Also, there is a main memory with numbered registers.
+
+Setting the number of registers of main memory:
+
+Example:
+Set the number of registers to 100:
+
+100
+[ENTER]
+[MSIZE]
+
+Ask for memory size:
+
+[SIZE?]
+
+The buttons [SIZE?] and [MSIZE] are located at MEMORY page.
+
+
+In order to save or recall a  memory  the register number
+goes before a STO or RCL
+
+Example: 4 RCL  recalls memory 4
+10  5  STO saves 10 in memory 5.
+10 'B' STO saves 10 in variable B.
+
+Indirect. (IND) Can be used with STO and RCL
+
+Examples.
+6 IND RCL 
+10  5  IND STO
+'B' IND RCL. If B contains 7, memory register 07 is recalled.
+15 'C' IND STO . If C contains 3, 15 is saved to memory register 03
+
+Has programming structures similar to the 48.
+Also, there are conditionals of the HP48.
+
+The stack is unlimited as in the 48.
+There are many commands for stack management similar to 
+commands present in the HP48.
+
+The  program variables can invoke other program variables
+up to 8 deep levels.
+
+The main program can invoke program variables  
+up to 9 levels.
+
+The number of levels allowed with XEQ nn and RTN is 99
+
+Programs either must be entered at hand in the program grid or loaded
+from an external text file.
+
+Programs can be saved in text format and later can be
+restored.
+Example:
+
+Save the current program to a text file with name MYPROG.pr
+
+'MYPROG'
+[ENTER]
+[SAVE]
+
+Load the program YOURPROG.pr :
+
+'yourprog'
+[ENTER]
+[LOAD]
+
+Note: [LOAD] and [SAVE] are located in PROGRAM page.
+
+A program can be written external to the calculator using a text
+editor.
+
+
+
+The width of each stack level is  254 characters max.
+
+The max width of a program line is 79 characters.
+
+Variables with special characters can be created in order to be
+used only in the main program
+
+Examples:
+Define the variable 'RCL 00' as 0 RCL:
+
+'RCL 00'
+<<0 RCL>>
+[STO]
+
+Define the variable '++' as 1 +
+
+'++'
+<<1 +>>
+[STO]
+
+Define the variable 'RCL IND 01' as ind 01 rcl:
+
+'RCL IND 01'
+<<ind 01 rcl>>
+[STO]
+
+In variables containing programs , due to the separator used is blank,
+some of these tricks can not be used.
+
+
+You can assign up to 18 keys.
+At the beginning the 18 assignable keys are blank
+Look at the calculator. The 18 assignable keys are in an arch around
+the basic numeric keys.
+
+To assign a key enter the key number ( 1 to 18 ), press enter,
+then write the variable name, press enter , and press the assign button.
+Example:
+
+Assign variable A to key 1
+1
+[ENTER]
+'A'
+[ENTER]
+[ASSIGN]
+
+To delete the assignment in key 1:
+1
+[ENTER]
+''
+[ENTER]
+[ASSIGN]
+
+Note: [ASSIGN] is located in the BUTTONS page.
+
+
+
+It is possible to export and import the variables and assigned keys
+Example:
+
+Save the current set of variables to a file named VARSTODAY.var
+
+'VARSTODAY'
+[enter]
+[SaveVars]   
+
+Load a set of variables from a file named LASTVARS.var
+
+'lastvars'
+[enter]
+[LoadVars]  Located at MEMORY page
+
+Save the current set of assigned buttons to a file named MYASSIGN.bt
+
+'myassign'
+[enter]
+[SAVE]  Located at BUTTONS page.
+
+Load a set of assigned buttons from a file named BUTTSET1.bt
+
+'buttset1'
+[enter]
+[LOAD]  Located at BUTTONS page.
+
+
+
+To change the number of decimals  FIX is used
+
+Example:
+
+4 FIX   put the number of decimals to 4.
+
+
+Naked (nude) internals.
+Internal commands can be entered at the stack without delimiters
+and later evaluated.
+
+Example:
+
+4
+[ENTER]
+5
+[ENTER]
+/     (Use /  located at the ALPHA page of the calculator! )
+[ENTER]
+
+Then 4, 5 and / are located in the first three stack levels.
+Now press [EVAL]
+
+
+The same using a program:
+
+4
+[ENTER]
+5
+[ENTER]
+<< / >>
+[ENTER]
+[EVAL]
+
+
+So, if the program contains a single command and this command is
+an internal command , you do not need the delimiters << and >>.
+
+
+
+Important:
+
+To stop a non responsive running program use F10 from your PC keyboard.
+
+
+</PRE>
+</BODY>
+</HTML>
